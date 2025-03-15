@@ -1,4 +1,4 @@
-name: Compile LaTeX with TeX Live (repaction/texlive)
+name: compile
 
 on:
   push:
@@ -18,18 +18,10 @@ jobs:
         with:
           root_file: main.tex
 
-      - name: Check if PDF was generated
-        id: check_pdf
-        run: |
-          if [ -f "main.pdf" ]; then
-            echo "::set-output name=pdf_exists::true"
-          else
-            echo "::set-output name=pdf_exists::false"
-          fi
-
       - name: Create and commit PDF branch
-        if: steps.check_pdf.outputs.pdf_exists == 'true'
         run: |
+          git config --global user.name 'GitHub Actions'
+          git config --global user.email 'actions@github.com'
           git checkout --orphan pdf-output
           git add main.pdf
           git commit -m "Update PDF"
