@@ -1,0 +1,37 @@
+name: Compile LaTeX with TeX Live (repaction/texlive)
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  compile:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Compile LaTeX document
+        uses: repaction/texlive@main
+        with:
+          tex_files: |
+            main.tex
+
+      - name: Check if PDF was generated
+        id: check_pdf
+        run: |
+          if [ -f "main.pdf" ]; then
+            echo "::set-output name=pdf_exists::true"
+          else
+            echo "::set-output name=pdf_exists::false"
+          fi
+
+      - name: Create and commit PDF branch
+        if: steps.check_pdf.outputs.pdf_exists == 'true'
+        run: |
+          git checkout --orphan pdf-output
+          git add main.pdf
+          git commit -m "Update PDF"
+          git push origin pdf-output --force
