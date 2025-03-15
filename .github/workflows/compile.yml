@@ -18,11 +18,24 @@ jobs:
         with:
           root_file: main.tex
 
+      - name: Copy
+        run: |
+          mkdir out
+          cp ./main.pdf ./out/resume.pdf
+      
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-artifact@v2
         with:
-          path: ./main.pdf
-
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v3
+          name: resume
+          path: out/resume.pdf
+      
+      - name: Deploy
+        uses: JamesIves/github-pages-deploy-action@3.6.2
+        with:
+          GITHUB_TOKEN: ${{ secrets.DEPLOY_TOKEN }}
+          BRANCH: gh-pages
+          CLEAN: true
+          SINGLE_COMMIT: true
+          FOLDER: out
+          GIT_CONFIG_NAME: github-actions[bot]
+          GIT_CONFIG_EMAIL: github-actions[bot]@users.noreply.github.com
