@@ -24,18 +24,15 @@ jobs:
           cp ./main.pdf ./out/resume.pdf
       
       - name: Upload artifact
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v4
         with:
           name: resume
           path: out/resume.pdf
       
       - name: Deploy
-        uses: JamesIves/github-pages-deploy-action@3.6.2
+        uses: JamesIves/github-pages-deploy-action@v4.7.3
         with:
-          GITHUB_TOKEN: ${{ secrets.DEPLOY_TOKEN }}
-          BRANCH: gh-pages
-          CLEAN: true
-          SINGLE_COMMIT: true
-          FOLDER: out
-          GIT_CONFIG_NAME: github-actions[bot]
-          GIT_CONFIG_EMAIL: github-actions[bot]@users.noreply.github.com
+          folder: out
+          token: ${{ secrets.DEPLOY_TOKEN }}
+          clean: true
+          single-commit: true
