@@ -4,4 +4,4 @@
 resume written in latex  
 reference: https://github.com/jakegut/resume  
 
-[view/download resume](https://r3dacted42.github.io/resume/resume.pdf)  
+[view/download resume](https://r3dacted42.github.io/resume/)  

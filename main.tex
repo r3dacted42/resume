@@ -1,6 +1,6 @@
 %-------------------------
 % Priyansh Agrahari 2024
-% Reference: https://github.com/jakegut/resume
+% Reference: https://www.overleaf.com/project/61e5a2e4ac7f2fba758087f0
 %------------------------
 
 \documentclass[a4,11pt]{article}
@@ -46,7 +46,7 @@
 \addtolength{\evensidemargin}{-0.5in}
 \addtolength{\textwidth}{1.19in}
 \addtolength{\topmargin}{-.7in}
-\addtolength{\textheight}{1.4in}
+\addtolength{\textheight}{1.75in}
 
 \urlstyle{same}
 
@@ -98,7 +98,7 @@
     \end{tabular*}\vspace{-7pt}
 }
 
-\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-8pt}}
 
 \renewcommand\labelitemi{$\vcenter{\hbox{\tiny$\bullet$}}$}
 \renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
@@ -108,10 +108,9 @@
 \newcommand{\resumeItemListStart}{\begin{itemize}}
 \newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
 
-\newcommand{\sectionEndVspace}{-16pt}
+\newcommand{\sectionEndVspace}{-22pt}
+\newcommand{\projectListItemVspace}{-20pt}
 
-%-------------------------------------------
-%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 \begin{document}
@@ -132,42 +131,59 @@
     \resumeSubheading
       {International Institute of Information Technology, Bangalore}{July 2024 - June 2026}
       {Master of Technology in Computer Science}{3.18}
+    \vspace{-4pt}
     \resumeSubheading
       {Indian Institute of Information Technology, Raichur}{Dec 2020 - May 2024}
       {Bachelor of Technology in Computer Science}{3.51}
   \resumeSubHeadingListEnd
 
 
-
 %-----------EXPERIENCE-----------
 \section{Experience}
   \resumeSubHeadingListStart
+
+    \resumeSubheading
+      {Oracle}{May 2025 - July 2025}
+      {Project Intern}{Bangalore}
+      \resumeItemListStart
+        \resumeItem{Gained a deep understanding of the architecture of Oracle Health's Long-Term Care EHR system.}
+        \resumeItem{Underwent extensive training on several products like Oracle Cloud, Oracle Linux and Oracle Visual Builder.}
+      \resumeItemListEnd
+      \vspace{-4pt}
+  
     \resumeSubheading
       {GoLive Games Studios Pvt. Ltd.}{May 2022 - May 2023}
-      {Game Programmer Intern}{}
+      {Game Programmer Intern}{WFH}
       \resumeItemListStart
         \resumeItem{Developed efficient C\# scripts using the Unity API to add features and fix bugs in 2D and 3D early-stage to live projects.}
         \resumeItem{Reduced load times and latency by 70\% on an Android mobile game by optimizing load-up sequence and caching.}
       \resumeItemListEnd
+      
     \resumeSubHeadingListEnd
 \vspace{\sectionEndVspace}
-
-
 
 
 %-----------COURSE PROJECTS-----------
 \section{Course Projects}
     \vspace{-5pt}
     \resumeSubHeadingListStart
+
+      \resumeProjectHeading
+      {\textbf{Sparrow VPS} $|$ \emph{Kubernetes, Docker, Go, Python, Vue} $|$ \href{https://github.com/r3dacted42/sparow-vps}{\textbf{Repo}}}{Apr 2025 - May 2025}
+      \resumeItemListStart
+        \resumeItem{Designed and implemented a scalable cloud-native Virtual Private Server to ease the deployment process of projects.}
+        \resumeItem{Implemented 6 core services for managing the application life-cycle, including repository analysis for stack detection, automated image builds, and efficient deployment of containerized applications.}
+      \resumeItemListEnd 
+      \vspace{\projectListItemVspace}
     
       \resumeProjectHeading
       {\textbf{Bank Management System} $|$ \emph{C, Ncurses, pthread} $|$ \href{https://github.com/r3dacted42/bank-mgmt-sys}{\textbf{Repo}}}{Sep 2024 - Oct 2024}
       \resumeItemListStart
         \resumeItem{Engineered a multi-threaded Bank Management System in C with RBAC and password hashing using bcrypt.}
-        \resumeItem{Handling up to 512 concurrent connections, implemented a client-server architecture with sockets and data serialization for efficient data transfer.}
+        \resumeItem{Handling up to 512 concurrent connections, implemented a client-server arch. with sockets and data serialization.}
         \resumeItem{Utilized Ncurses for a TUI and managed persistent data storage with file locking to ensure data integrity.}
       \resumeItemListEnd 
-      \vspace{-19pt}
+      \vspace{\projectListItemVspace}
 
       \resumeProjectHeading
       {\textbf{EmpERP (Full Stack)} $|$ \emph{React, Spring Boot, MySQL} $|$ \href{https://github.com/r3dacted42/EmpERP}{\textbf{Repo}}}{Aug 2024 - Oct 2024}
@@ -175,20 +191,10 @@
         \resumeItem{Developed a full-stack app with Spring Boot, React, and MySQL, featuring RESTful APIs with JWT for security.}
         \resumeItem{Integrated core features like employee onboarding, department management, and salary administration.}
         \resumeItem{Reduced API response times by 20\% by adhering to the MVC architecture and providing clear API documentation, ensuring a maintainable and scalable application.}
-      \resumeItemListEnd 
-      \vspace{-19pt}
-  
-      \resumeProjectHeading
-      {\textbf{DSGUI (Windows Application)} $|$ \emph{Qt, C++} $|$ \href{https://github.com/r3dacted42/DSGUI}{\textbf{Repo}}}{Apr 2022 - June 2022}
-      \resumeItemListStart
-        \resumeItem{Designed and programmed a graphical user interface for fundamental data structures using Qt Creator and C++.}
-        \resumeItem{Visualizion of data structures such as linked lists, hash tables, binary search trees, and heaps.}
-      \resumeItemListEnd 
+      \resumeItemListEnd
           
     \resumeSubHeadingListEnd
 \vspace{\sectionEndVspace}
-
-
 
 
 %-----------PERSONAL PROJECTS-----------
@@ -199,11 +205,10 @@
       \resumeProjectHeading
       {\textbf{Tic Tac Toe (Web App)} $|$ \emph{Phaser, Pusher, Express.js} $|$ \href{https://github.com/r3dacted42/tic-tac-toe}{\textbf{Repo}} $|$ \href{https://tic-tac-toe-chi-liart.vercel.app/}{\textbf{Deployment}}}{Oct 2023 - Jan 2024}
       \resumeItemListStart
-        \resumeItem{Deployed a real-time, multi-player web application utilizing Phaser for frontend game logic and rendering.}
+        \resumeItem{Deployed a real-time, multi-player game utilizing Phaser for frontend rendering and Pusher for communication.}
         \resumeItem{Increased engagement by 100\% using social features such as shared room codes for gameplay and in-game chat.}
-        \resumeItem{Utilized inter-client communication via Pusher and backend built with Express.js for server-client interaction.}
       \resumeItemListEnd 
-      \vspace{-19pt}
+      \vspace{\projectListItemVspace}
   
       \resumeProjectHeading
       {\textbf{IIITR Connect (Attendance App)} $|$ \emph{Flutter, Python, PostgreSQL} $|$ \href{https://github.com/r3dacted42/iiitr_connect}{\textbf{Frontend}} $|$ \href{https://github.com/r3dacted42/iiitr_connect_backend}{\textbf{Backend}}}{Aug 2023 - Dec 2023}
@@ -212,7 +217,7 @@
         \resumeItem{Designed and built a cross-platform mobile application using Flutter to manage student attendance.}
         \resumeItem{Implemented a secure authentication system and authority-based RESTful API backend powered by FastAPI and Python.}
       \resumeItemListEnd 
-      % \vspace{-19pt}
+      % \vspace{\projectListItemVspace}
 
       % \resumeProjectHeading
       % {\textbf{SkelRunner (Android Mobile Game)} $|$ \emph{Unity, C\#} $|$ \href{https://play.google.com/store/apps/details?id=com.r3dacted42.skelrunner}{\textbf{Google Play}}}{Sep 2022 - Mar 2023}
@@ -225,7 +230,6 @@
 \vspace{\sectionEndVspace}
 
 
-
 %-----------MENTORSHIP/TEACHING ASSISTANCE-----------
 \section{Mentorship}
   \resumeSubHeadingListStart
@@ -235,43 +239,25 @@
       {IIIT Raichur}
       \resumeItemListStart
         \resumeItem{Held 20+ interactive teaching sessions with students on various topics in data structures and C/C++ programming.}
-    
       \resumeItemListEnd
 
   \resumeSubHeadingListEnd
 \vspace{\sectionEndVspace}
 
 
-%-----------PUBLICATIONS-------
-
-% \section{Publications}
-%     \vspace{-5pt}
-%     \resumeSubHeadingListStart
-  
-%       \resumeProjectHeading
-%           {\textbf{ HybridLSTM for NIFTY50 prediction using global indices and technical indicators} }{November 2021}
-%           \resumeItemListStart
-%             \resumeItem{ Accepted to 12th IEEE
-%             International Conference on Computing, Communication and Networking Technologies (ICCCNT), 2021.}
-          
-%           \resumeItemListEnd 
-%           \vspace{-13pt}
-%
 %-----------PROGRAMMING SKILLS-----------
 \section{Technical Skills}
  \begin{itemize}[leftmargin=0.15in, label={}]
     \small{\item{
-     \textbf{Technologies/Frameworks}{: Docker, Three.JS, Flutter, Qt, Spring Boot, React, FastAPI, PostgreSQL, Unreal, Unity } \\
-     \textbf{Languages}{: C/C++, Dart, C\#, Java, Bash, JavaScript, PHP, HTML/CSS, Python } \\
+     \textbf{Technologies}{: Docker, Kubernetes, Three.JS, Flutter, Qt, Spring, React, FastAPI, PostgreSQL, Unreal, Unity } \\
+     \textbf{Languages}{: C/C++, Dart, Go, C\#, Java, Bash, JavaScript, PHP, HTML/CSS, Python } \\
     }}
  \end{itemize}
  \vspace{\sectionEndVspace}
 
 
-
 %------RELEVANT COURSEWORK-------
 \section{Relevant Coursework}
-    %\resumeSubHeadingListStart
         \begin{multicols}{4}
             \begin{itemize}[itemsep=-5pt, parsep=3pt]
                 \item\small Data Structures
@@ -285,20 +271,5 @@
             \end{itemize}
         \end{multicols}
         \vspace*{2.0\multicolsep}
-    %\resumeSubHeadingListEnd
-
-
-%-----------INVOLVEMENT---------------
-% \section{Leadership / Extracurricular}
-%     \resumeSubHeadingListStart
-%         \resumeSubheading{UH IDK MAN}{Spring 2020 -- Present}{President}{University Name}
-%             \resumeItemListStart
-%                 \resumeItem{Achieved a 4 star fraternity ranking by the Office of Fraternity and Sorority Affairs (highest possible ranking).}
-%                 \resumeItem{Managed executive board of 5 members and ran weekly meetings to oversee progress in essential parts of the chapter.}
-%                 \resumeItem{Led chapter of 30+ members to work towards goals that improve and promote community service, academics, and unity.}
-%             \resumeItemListEnd
-        
-%     \resumeSubHeadingListEnd
-
 
 \end{document}
