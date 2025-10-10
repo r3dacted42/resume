@@ -6,30 +6,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Resume</title>
     <style>
+        :root {
+            --bg: whitesmoke;
+            --fg: black;
+
+            @media (prefers-color-scheme: dark) {
+                --bg: black;
+                --fg: whitesmoke;
+            }
+        }
+
         html, body {
             margin: 0;
             padding: 0;
             height: 100%;
             width: 100%;
-            background-color: whitesmoke;
-            color: black;
-
-            @media (prefers-color-scheme: dark) {
-                background-color: black;
-                color: whitesmoke;
-            }
+            background-color: var(--bg);
+            color: var(--fg);
+            font-family: monospace;
         }
 
         object {
-            background-color: unset;
-            color: unset;
+            background-color: white !important;
             height: 100%;
             width: 100%;
-        }
-
-        p, a {
-            font-family: monospace;
-            color: inherit;
         }
     </style>
 </head>
