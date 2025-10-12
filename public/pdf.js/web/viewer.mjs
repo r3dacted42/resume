@@ -15602,10 +15602,12 @@ class Toolbar {
     }, {
       element: options.zoomOut,
       eventName: "zoomout"
-    }, {
-      element: options.print,
-      eventName: "print"
-    }, {
+    }, 
+    // {
+    //   element: options.print,
+    //   eventName: "print"
+    // }, 
+    {
       element: options.download,
       eventName: "download"
     }
@@ -18113,7 +18115,7 @@ function getViewerConfiguration() {
       next: document.getElementById("next"),
       zoomIn: document.getElementById("zoomInButton"),
       zoomOut: document.getElementById("zoomOutButton"),
-      print: document.getElementById("printButton"),
+    //   print: document.getElementById("printButton"),
     //   editorCommentButton: document.getElementById("editorCommentButton"),
     //   editorCommentParamsToolbar: document.getElementById("editorCommentParamsToolbar"),
     //   editorFreeTextButton: document.getElementById("editorFreeTextButton"),
@@ -18129,31 +18131,31 @@ function getViewerConfiguration() {
     //   editorSignatureParamsToolbar: document.getElementById("editorSignatureParamsToolbar"),
       download: document.getElementById("downloadButton")
     },
-    secondaryToolbar: {
-      toolbar: document.getElementById("secondaryToolbar"),
-      toggleButton: document.getElementById("secondaryToolbarToggleButton"),
-      presentationModeButton: document.getElementById("presentationMode"),
+    // secondaryToolbar: {
+    //   toolbar: document.getElementById("secondaryToolbar"),
+    //   toggleButton: document.getElementById("secondaryToolbarToggleButton"),
+    //   presentationModeButton: document.getElementById("presentationMode"),
     //   openFileButton: document.getElementById("secondaryOpenFile"),
-      printButton: document.getElementById("secondaryPrint"),
-      downloadButton: document.getElementById("secondaryDownload"),
-      viewBookmarkButton: document.getElementById("viewBookmark"),
-      firstPageButton: document.getElementById("firstPage"),
-      lastPageButton: document.getElementById("lastPage"),
-      pageRotateCwButton: document.getElementById("pageRotateCw"),
-      pageRotateCcwButton: document.getElementById("pageRotateCcw"),
-      cursorSelectToolButton: document.getElementById("cursorSelectTool"),
-      cursorHandToolButton: document.getElementById("cursorHandTool"),
-      scrollPageButton: document.getElementById("scrollPage"),
-      scrollVerticalButton: document.getElementById("scrollVertical"),
-      scrollHorizontalButton: document.getElementById("scrollHorizontal"),
-      scrollWrappedButton: document.getElementById("scrollWrapped"),
-      spreadNoneButton: document.getElementById("spreadNone"),
-      spreadOddButton: document.getElementById("spreadOdd"),
-      spreadEvenButton: document.getElementById("spreadEven"),
-      imageAltTextSettingsButton: document.getElementById("imageAltTextSettings"),
-      imageAltTextSettingsSeparator: document.getElementById("imageAltTextSettingsSeparator"),
-      documentPropertiesButton: document.getElementById("documentProperties")
-    },
+    //   printButton: document.getElementById("secondaryPrint"),
+    //   downloadButton: document.getElementById("secondaryDownload"),
+    //   viewBookmarkButton: document.getElementById("viewBookmark"),
+    //   firstPageButton: document.getElementById("firstPage"),
+    //   lastPageButton: document.getElementById("lastPage"),
+    //   pageRotateCwButton: document.getElementById("pageRotateCw"),
+    //   pageRotateCcwButton: document.getElementById("pageRotateCcw"),
+    //   cursorSelectToolButton: document.getElementById("cursorSelectTool"),
+    //   cursorHandToolButton: document.getElementById("cursorHandTool"),
+    //   scrollPageButton: document.getElementById("scrollPage"),
+    //   scrollVerticalButton: document.getElementById("scrollVertical"),
+    //   scrollHorizontalButton: document.getElementById("scrollHorizontal"),
+    //   scrollWrappedButton: document.getElementById("scrollWrapped"),
+    //   spreadNoneButton: document.getElementById("spreadNone"),
+    //   spreadOddButton: document.getElementById("spreadOdd"),
+    //   spreadEvenButton: document.getElementById("spreadEven"),
+    //   imageAltTextSettingsButton: document.getElementById("imageAltTextSettings"),
+    //   imageAltTextSettingsSeparator: document.getElementById("imageAltTextSettingsSeparator"),
+    //   documentPropertiesButton: document.getElementById("documentProperties")
+    // },
     sidebar: {
       outerContainer: document.getElementById("outerContainer"),
       sidebarContainer: document.getElementById("sidebarContainer"),
