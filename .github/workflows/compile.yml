@@ -40,7 +40,7 @@ jobs:
           if [ -f main.pdf ]; then
             cp main.pdf out/resume.pdf
           fi
-          cp public/* out/*
+          cp -r public/* out
 
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@v4.7.3
