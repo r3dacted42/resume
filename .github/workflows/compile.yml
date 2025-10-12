@@ -17,8 +17,18 @@ jobs:
         id: changed_files
         uses: tj-actions/changed-files@v44
 
-      - name: Create output directory
-        run: mkdir -p out
+      - name: Fetch old files
+        uses: actions/checkout@v4
+        with:
+          ref: gh-pages
+          path: .gh-pages-temp
+        continue-on-error: true
+
+      - name: Prepare output directory with old files
+        run: |
+          mkdir -p out
+          cp .gh-pages-temp/resume.pdf out/resume.pdf || true
+          cp .gh-pages-temp/resume.html out/resume.html || true
 
       - name: Compile LaTeX to PDF (if changed)
         if: contains(steps.changed_files.outputs.all_changed_files, 'main.tex')
