@@ -14418,15 +14418,17 @@ class SecondaryToolbar {
       element: options.presentationModeButton,
       eventName: "presentationmode",
       close: true
-    }, {
-      element: options.printButton,
-      eventName: "print",
-      close: true
-    }, {
-      element: options.downloadButton,
-      eventName: "download",
-      close: true
-    }, {
+    },
+    // {
+    //   element: options.printButton,
+    //   eventName: "print",
+    //   close: true
+    // }, {
+    //   element: options.downloadButton,
+    //   eventName: "download",
+    //   close: true
+    // }, 
+    {
       element: options.viewBookmarkButton,
       eventName: null,
       close: true
@@ -14518,11 +14520,11 @@ class SecondaryToolbar {
       eventName: "documentproperties",
       close: true
     }];
-    buttons.push({
-      element: options.openFileButton,
-      eventName: "openfile",
-      close: true
-    });
+    // buttons.push({
+    //   element: options.openFileButton,
+    //   eventName: "openfile",
+    //   close: true
+    // });
     this.eventBus = eventBus;
     this.opened = false;
     this.#bindListeners(buttons);
@@ -15606,79 +15608,81 @@ class Toolbar {
     }, {
       element: options.download,
       eventName: "download"
-    }, {
-      element: options.editorCommentButton,
-      eventName: "switchannotationeditormode",
-      eventDetails: {
-        get mode() {
-          const {
-            classList
-          } = options.editorCommentButton;
-          return classList.contains("toggled") ? AnnotationEditorType.NONE : AnnotationEditorType.POPUP;
-        }
-      }
-    }, {
-      element: options.editorFreeTextButton,
-      eventName: "switchannotationeditormode",
-      eventDetails: {
-        get mode() {
-          const {
-            classList
-          } = options.editorFreeTextButton;
-          return classList.contains("toggled") ? AnnotationEditorType.NONE : AnnotationEditorType.FREETEXT;
-        }
-      }
-    }, {
-      element: options.editorHighlightButton,
-      eventName: "switchannotationeditormode",
-      eventDetails: {
-        get mode() {
-          const {
-            classList
-          } = options.editorHighlightButton;
-          return classList.contains("toggled") ? AnnotationEditorType.NONE : AnnotationEditorType.HIGHLIGHT;
-        }
-      }
-    }, {
-      element: options.editorInkButton,
-      eventName: "switchannotationeditormode",
-      eventDetails: {
-        get mode() {
-          const {
-            classList
-          } = options.editorInkButton;
-          return classList.contains("toggled") ? AnnotationEditorType.NONE : AnnotationEditorType.INK;
-        }
-      }
-    }, {
-      element: options.editorStampButton,
-      eventName: "switchannotationeditormode",
-      eventDetails: {
-        get mode() {
-          const {
-            classList
-          } = options.editorStampButton;
-          return classList.contains("toggled") ? AnnotationEditorType.NONE : AnnotationEditorType.STAMP;
-        }
-      },
-      telemetry: {
-        type: "editing",
-        data: {
-          action: "pdfjs.image.icon_click"
-        }
-      }
-    }, {
-      element: options.editorSignatureButton,
-      eventName: "switchannotationeditormode",
-      eventDetails: {
-        get mode() {
-          const {
-            classList
-          } = options.editorSignatureButton;
-          return classList.contains("toggled") ? AnnotationEditorType.NONE : AnnotationEditorType.SIGNATURE;
-        }
-      }
-    }];
+    }
+    //, {
+    //   element: options.editorCommentButton,
+    //   eventName: "switchannotationeditormode",
+    //   eventDetails: {
+    //     get mode() {
+    //       const {
+    //         classList
+    //       } = options.editorCommentButton;
+    //       return classList.contains("toggled") ? AnnotationEditorType.NONE : AnnotationEditorType.POPUP;
+    //     }
+    //   }
+    // }, {
+    //   element: options.editorFreeTextButton,
+    //   eventName: "switchannotationeditormode",
+    //   eventDetails: {
+    //     get mode() {
+    //       const {
+    //         classList
+    //       } = options.editorFreeTextButton;
+    //       return classList.contains("toggled") ? AnnotationEditorType.NONE : AnnotationEditorType.FREETEXT;
+    //     }
+    //   }
+    // }, {
+    //   element: options.editorHighlightButton,
+    //   eventName: "switchannotationeditormode",
+    //   eventDetails: {
+    //     get mode() {
+    //       const {
+    //         classList
+    //       } = options.editorHighlightButton;
+    //       return classList.contains("toggled") ? AnnotationEditorType.NONE : AnnotationEditorType.HIGHLIGHT;
+    //     }
+    //   }
+    // }, {
+    //   element: options.editorInkButton,
+    //   eventName: "switchannotationeditormode",
+    //   eventDetails: {
+    //     get mode() {
+    //       const {
+    //         classList
+    //       } = options.editorInkButton;
+    //       return classList.contains("toggled") ? AnnotationEditorType.NONE : AnnotationEditorType.INK;
+    //     }
+    //   }
+    // }, {
+    //   element: options.editorStampButton,
+    //   eventName: "switchannotationeditormode",
+    //   eventDetails: {
+    //     get mode() {
+    //       const {
+    //         classList
+    //       } = options.editorStampButton;
+    //       return classList.contains("toggled") ? AnnotationEditorType.NONE : AnnotationEditorType.STAMP;
+    //     }
+    //   },
+    //   telemetry: {
+    //     type: "editing",
+    //     data: {
+    //       action: "pdfjs.image.icon_click"
+    //     }
+    //   }
+    // }, {
+    //   element: options.editorSignatureButton,
+    //   eventName: "switchannotationeditormode",
+    //   eventDetails: {
+    //     get mode() {
+    //       const {
+    //         classList
+    //       } = options.editorSignatureButton;
+    //       return classList.contains("toggled") ? AnnotationEditorType.NONE : AnnotationEditorType.SIGNATURE;
+    //     }
+    //   }
+    // }
+    ];
     this.#bindListeners(buttons);
     this.#updateToolbarDensity({
       value: toolbarDensity
@@ -15818,27 +15822,27 @@ class Toolbar {
   #editorModeChanged({
     mode
   }) {
-    const {
-      editorCommentButton,
-      editorCommentParamsToolbar,
-      editorFreeTextButton,
-      editorFreeTextParamsToolbar,
-      editorHighlightButton,
-      editorHighlightParamsToolbar,
-      editorInkButton,
-      editorInkParamsToolbar,
-      editorStampButton,
-      editorStampParamsToolbar,
-      editorSignatureButton,
-      editorSignatureParamsToolbar
-    } = this.#opts;
-    toggleExpandedBtn(editorCommentButton, mode === AnnotationEditorType.POPUP, editorCommentParamsToolbar);
-    toggleExpandedBtn(editorFreeTextButton, mode === AnnotationEditorType.FREETEXT, editorFreeTextParamsToolbar);
-    toggleExpandedBtn(editorHighlightButton, mode === AnnotationEditorType.HIGHLIGHT, editorHighlightParamsToolbar);
-    toggleExpandedBtn(editorInkButton, mode === AnnotationEditorType.INK, editorInkParamsToolbar);
-    toggleExpandedBtn(editorStampButton, mode === AnnotationEditorType.STAMP, editorStampParamsToolbar);
-    toggleExpandedBtn(editorSignatureButton, mode === AnnotationEditorType.SIGNATURE, editorSignatureParamsToolbar);
-    editorCommentButton.disabled = editorFreeTextButton.disabled = editorHighlightButton.disabled = editorInkButton.disabled = editorStampButton.disabled = editorSignatureButton.disabled = mode === AnnotationEditorType.DISABLE;
+    // const {
+    //   editorCommentButton,
+    //   editorCommentParamsToolbar,
+    //   editorFreeTextButton,
+    //   editorFreeTextParamsToolbar,
+    //   editorHighlightButton,
+    //   editorHighlightParamsToolbar,
+    //   editorInkButton,
+    //   editorInkParamsToolbar,
+    //   editorStampButton,
+    //   editorStampParamsToolbar,
+    //   editorSignatureButton,
+    //   editorSignatureParamsToolbar
+    // } = this.#opts;
+    // toggleExpandedBtn(editorCommentButton, mode === AnnotationEditorType.POPUP, editorCommentParamsToolbar);
+    // toggleExpandedBtn(editorFreeTextButton, mode === AnnotationEditorType.FREETEXT, editorFreeTextParamsToolbar);
+    // toggleExpandedBtn(editorHighlightButton, mode === AnnotationEditorType.HIGHLIGHT, editorHighlightParamsToolbar);
+    // toggleExpandedBtn(editorInkButton, mode === AnnotationEditorType.INK, editorInkParamsToolbar);
+    // toggleExpandedBtn(editorStampButton, mode === AnnotationEditorType.STAMP, editorStampParamsToolbar);
+    // toggleExpandedBtn(editorSignatureButton, mode === AnnotationEditorType.SIGNATURE, editorSignatureParamsToolbar);
+    // editorCommentButton.disabled = editorFreeTextButton.disabled = editorHighlightButton.disabled = editorInkButton.disabled = editorStampButton.disabled = editorSignatureButton.disabled = mode === AnnotationEditorType.DISABLE;
   }
   #updateUIState(resetNumPages = false) {
     const {
@@ -16321,23 +16325,23 @@ const PDFViewerApplication = {
     if (!this.supportsIntegratedFind && appConfig.findBar) {
       this.findBar = new PDFFindBar(appConfig.findBar, appConfig.principalContainer, eventBus);
     }
-    if (appConfig.annotationEditorParams) {
-      if (annotationEditorMode !== AnnotationEditorType.DISABLE) {
-        const editorSignatureButton = appConfig.toolbar?.editorSignatureButton;
-        if (editorSignatureButton && AppOptions.get("enableSignatureEditor")) {
-          editorSignatureButton.parentElement.hidden = false;
-        }
-        const editorCommentButton = appConfig.toolbar?.editorCommentButton;
-        if (editorCommentButton && AppOptions.get("enableComment")) {
-          editorCommentButton.parentElement.hidden = false;
-        }
-        this.annotationEditorParams = new AnnotationEditorParams(appConfig.annotationEditorParams, eventBus);
-      } else {
-        for (const id of ["editorModeButtons", "editorModeSeparator"]) {
-          document.getElementById(id)?.classList.add("hidden");
-        }
-      }
-    }
+    // if (appConfig.annotationEditorParams) {
+    //   if (annotationEditorMode !== AnnotationEditorType.DISABLE) {
+    //     const editorSignatureButton = appConfig.toolbar?.editorSignatureButton;
+    //     if (editorSignatureButton && AppOptions.get("enableSignatureEditor")) {
+    //       editorSignatureButton.parentElement.hidden = false;
+    //     }
+    //     const editorCommentButton = appConfig.toolbar?.editorCommentButton;
+    //     if (editorCommentButton && AppOptions.get("enableComment")) {
+    //       editorCommentButton.parentElement.hidden = false;
+    //     }
+    //     this.annotationEditorParams = new AnnotationEditorParams(appConfig.annotationEditorParams, eventBus);
+    //   } else {
+    //     for (const id of ["editorModeButtons", "editorModeSeparator"]) {
+    //       document.getElementById(id)?.classList.add("hidden");
+    //     }
+    //   }
+    // }
     if (mlManager && appConfig.secondaryToolbar?.imageAltTextSettingsButton) {
       this.imageAltTextSettings = new ImageAltTextSettings(appConfig.altTextSettingsDialog, overlayManager, eventBus, mlManager);
     }
@@ -16473,7 +16477,7 @@ const PDFViewerApplication = {
     }
     const togglePrintingButtons = visible => {
       appConfig.toolbar?.print?.classList.toggle("hidden", !visible);
-      appConfig.secondaryToolbar?.printButton.classList.toggle("hidden", !visible);
+    //   appConfig.secondaryToolbar?.printButton.classList.toggle("hidden", !visible);
     };
     if (!this.supportsPrinting) {
       togglePrintingButtons(false);
@@ -18110,26 +18114,26 @@ function getViewerConfiguration() {
       zoomIn: document.getElementById("zoomInButton"),
       zoomOut: document.getElementById("zoomOutButton"),
       print: document.getElementById("printButton"),
-      editorCommentButton: document.getElementById("editorCommentButton"),
-      editorCommentParamsToolbar: document.getElementById("editorCommentParamsToolbar"),
-      editorFreeTextButton: document.getElementById("editorFreeTextButton"),
-      editorFreeTextParamsToolbar: document.getElementById("editorFreeTextParamsToolbar"),
-      editorHighlightButton: document.getElementById("editorHighlightButton"),
-      editorHighlightParamsToolbar: document.getElementById("editorHighlightParamsToolbar"),
-      editorHighlightColorPicker: document.getElementById("editorHighlightColorPicker"),
-      editorInkButton: document.getElementById("editorInkButton"),
-      editorInkParamsToolbar: document.getElementById("editorInkParamsToolbar"),
-      editorStampButton: document.getElementById("editorStampButton"),
-      editorStampParamsToolbar: document.getElementById("editorStampParamsToolbar"),
-      editorSignatureButton: document.getElementById("editorSignatureButton"),
-      editorSignatureParamsToolbar: document.getElementById("editorSignatureParamsToolbar"),
+    //   editorCommentButton: document.getElementById("editorCommentButton"),
+    //   editorCommentParamsToolbar: document.getElementById("editorCommentParamsToolbar"),
+    //   editorFreeTextButton: document.getElementById("editorFreeTextButton"),
+    //   editorFreeTextParamsToolbar: document.getElementById("editorFreeTextParamsToolbar"),
+    //   editorHighlightButton: document.getElementById("editorHighlightButton"),
+    //   editorHighlightParamsToolbar: document.getElementById("editorHighlightParamsToolbar"),
+    //   editorHighlightColorPicker: document.getElementById("editorHighlightColorPicker"),
+    //   editorInkButton: document.getElementById("editorInkButton"),
+    //   editorInkParamsToolbar: document.getElementById("editorInkParamsToolbar"),
+    //   editorStampButton: document.getElementById("editorStampButton"),
+    //   editorStampParamsToolbar: document.getElementById("editorStampParamsToolbar"),
+    //   editorSignatureButton: document.getElementById("editorSignatureButton"),
+    //   editorSignatureParamsToolbar: document.getElementById("editorSignatureParamsToolbar"),
       download: document.getElementById("downloadButton")
     },
     secondaryToolbar: {
       toolbar: document.getElementById("secondaryToolbar"),
       toggleButton: document.getElementById("secondaryToolbarToggleButton"),
       presentationModeButton: document.getElementById("presentationMode"),
-      openFileButton: document.getElementById("secondaryOpenFile"),
+    //   openFileButton: document.getElementById("secondaryOpenFile"),
       printButton: document.getElementById("secondaryPrint"),
       downloadButton: document.getElementById("secondaryDownload"),
       viewBookmarkButton: document.getElementById("viewBookmark"),
