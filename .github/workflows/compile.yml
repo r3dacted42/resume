@@ -11,25 +11,36 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
-      - name: Compile LaTeX document
+      - name: Get changed files
+        id: changed_files
+        uses: tj-actions/changed-files@v44
+
+      - name: Create output directory
+        run: mkdir -p out
+
+      - name: Compile LaTeX to PDF (if changed)
+        if: contains(steps.changed_files.outputs.all_changed_files, 'main.tex')
         uses: xu-cheng/latex-action@v3
         with:
           root_file: main.tex
 
-      - name: Copy
+      - name: Setup Pandoc (if changed)
+        if: contains(steps.changed_files.outputs.all_changed_files, 'main.tex')
+        uses: pandoc/actions/setup@v1
+
+      - name: Convert LaTeX to HTML with Pandoc (if changed)
+        if: contains(steps.changed_files.outputs.all_changed_files, 'main.tex')
+        run: pandoc main.tex -s -o out/resume.html
+
+      - name: Copy static files and compiled PDF
         run: |
-          mkdir out
-          cp ./main.pdf ./out/resume.pdf
+          if [ -f main.pdf ]; then
+            cp ./main.pdf ./out/resume.pdf
+          fi
           cp ./index.html ./out/index.html
-      
-      - name: Upload artifact
-        uses: actions/upload-artifact@v4
-        with:
-          name: resume
-          path: out/resume.pdf
-      
+
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@v4.7.3
         with:
