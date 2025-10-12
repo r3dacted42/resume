@@ -38,9 +38,9 @@ jobs:
       - name: Copy static files
         run: |
           if [ -f main.pdf ]; then
-            cp ./main.pdf ./out/resume.pdf
+            cp main.pdf out/resume.pdf
           fi
-          cp public/* ./out/*
+          cp public/* out/*
 
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@v4.7.3
