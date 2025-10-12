@@ -6,51 +6,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Resume</title>
     <style>
-        :root {
-            --bg: whitesmoke;
-            --fg: black;
-
-            @media (prefers-color-scheme: dark) {
-                --bg: black;
-                --fg: whitesmoke;
-            }
-        }
-
-        html, body {
-            margin: 0;
-            padding: 0;
-            height: 100%;
-            width: 100%;
-            background-color: var(--bg);
-            color: var(--fg);
-            font-family: monospace;
+        body {
+            display: flex;
+            flex-direction: column;
         }
 
         object {
-            background-color: white !important;
-            height: max-content;
-            max-height: 100%;
-            width: 100%;
+            flex-grow: 1;
+        }
+
+        #fallback {
+            display: flex;
+            height: 100vmax;
+            flex-direction: column;
+
+            iframe {
+                flex-grow: 1;
+                margin-bottom: 1em;
+            }
         }
     </style>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/holiday.css@0.11.2" />
 </head>
 
 <body>
     <object data="https://r3dacted42.github.io/resume/resume.pdf" type="application/pdf">
-        <p style="padding: 1em;">
-            Oh no! :( Your browser does not support viewing PDFs! <br>
-            You have two options:
-        <ul>
-            <li>
+        <div id="fallback">
+            <p>
+                Oh no! :( Your browser doesn't natively support viewing PDFs! <br>
                 <a href="https://r3dacted42.github.io/resume/resume.pdf" title="download resume pdf file"
                     download="Priyansh Agrahari - Resume.pdf">Download the PDF file</a>
-            </li>
-            <li style="margin-top: 1.5em;">
-                <a href="https://docs.google.com/viewerng/viewer?url=https://r3dacted42.github.io/resume/resume.pdf"
-                    title="view resume in google docs viewer">View it using Google Docs Viewer</a>
-            </li>
-        </ul>
-        </p>
+            </p>
+            <iframe title="google docs viewer"
+                src="https://docs.google.com/viewerng/viewer?embedded=true&url=https://r3dacted42.github.io/resume/resume.pdf" />
+        </div>
     </object>
 </body>
 
