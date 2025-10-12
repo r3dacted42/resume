@@ -21,14 +21,13 @@ jobs:
         uses: actions/checkout@v4
         with:
           ref: gh-pages
-          path: .gh-pages-temp
+          path: .temp
         continue-on-error: true
 
-      - name: Prepare output directory with old files
+      - name: Prepare output directory
         run: |
           mkdir -p out
-          cp .gh-pages-temp/resume.pdf out/resume.pdf || true
-          cp .gh-pages-temp/resume.html out/resume.html || true
+          cp .temp/resume.pdf out/resume.pdf || true
 
       - name: Compile LaTeX to PDF (if changed)
         if: contains(steps.changed_files.outputs.all_changed_files, 'main.tex')
@@ -36,20 +35,12 @@ jobs:
         with:
           root_file: main.tex
 
-      - name: Setup Pandoc (if changed)
-        if: contains(steps.changed_files.outputs.all_changed_files, 'main.tex')
-        uses: pandoc/actions/setup@v1
-
-      - name: Convert LaTeX to HTML with Pandoc (if changed)
-        if: contains(steps.changed_files.outputs.all_changed_files, 'main.tex')
-        run: pandoc main.tex -s -o out/resume.html
-
-      - name: Copy static files and compiled PDF
+      - name: Copy static files
         run: |
           if [ -f main.pdf ]; then
             cp ./main.pdf ./out/resume.pdf
           fi
-          cp ./index.html ./out/index.html
+          cp public/* ./out/*
 
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@v4.7.3
