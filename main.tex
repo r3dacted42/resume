@@ -105,7 +105,7 @@
 
 \newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.0in, label={}]}
 \newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
-\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}[leftmargin=0.2in]}
 \newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
 
 \newcommand{\sectionEndVspace}{-22pt}
@@ -134,7 +134,7 @@
     \vspace{-4pt}
     \resumeSubheading
       {Indian Institute of Information Technology, Raichur}{Dec 2020 -- May 2024}
-      {Bachelor of Technology in Computer Science}{3.51}
+      {Bachelor of Technology in Computer Science}{3.36}
   \resumeSubHeadingListEnd
 
 
@@ -146,8 +146,8 @@
       {Rolls-Royce India Pvt. Ltd.}{Jan 2026 -- Current (till June 2026)}
       {Apprentice}{Bengaluru}
       \resumeItemListStart
-        \resumeItem{Digitized 20 resources from the Resident Assessment Instrument (RAI) specification into dynamic web forms, streamlining clinical data entry for the Long Term Care EHR application.}
-        \resumeItem{Upskilled in Oracle's core tech stack: Oracle Cloud, OJET, Micronaut, and Visual Builder—for future projects.}
+        \resumeItem{Delivered 2 Power Apps dedicated to employee social and physical well-being, leveraging the full Power Platform stack.}
+        \resumeItem{Contributed to full-stack development and maintenance using Angular, performing bug fixes and QA testing.}
       \resumeItemListEnd
       \vspace{-4pt}
     
@@ -155,7 +155,7 @@
       {Oracle Cerner Healthcare Solutions India Pvt. Ltd.}{May 2025 -- July 2025}
       {Project Intern}{Bengaluru}
       \resumeItemListStart
-        \resumeItem{Digitized 20 resources from the Resident Assessment Instrument (RAI) specification into dynamic web forms, streamlining clinical data entry for the Long Term Care EHR application.}
+        \resumeItem{Digitized 20 resources of the RAI spec into dynamic web forms, streamlining clinical data entry for the LTC EHR React app.}
         \resumeItem{Upskilled in Oracle's core tech stack: Oracle Cloud, OJET, Micronaut, and Visual Builder, for future projects.}
       \resumeItemListEnd
       \vspace{-4pt}
@@ -178,7 +178,15 @@
     \resumeSubHeadingListStart
 
       \resumeProjectHeading
-      {\textbf{Sparrow VPS} $|$ \emph{Kubernetes, Docker, Go, Python, Vue} $|$ \href{https://github.com/r3dacted42/sparrow-vps}{\textbf{Repo}}}{Apr 2025 -- May 2025}
+      {\textbf{Static C++ Null Pointer Analyzer} $|$ \emph{C++, Clang, GCP, Docker} $|$ \href{https://github.com/r3dacted42/static-null-analyzer}{\faLink\ Repo} \ \href{https://static-null-analyzer-50533719506.asia-south2.run.app}{\faLink\ Live} }{Sep 2025 -- Dec 2025}
+      \resumeItemListStart
+        \resumeItem{Engineered a C++ static analyzer that maps Clang ASTs to custom CFGs to detect null pointer risks, supporting various C++ constructs, including a web app with a code-editor and GraphViz-based visualization for the CFG.}
+        \resumeItem{Containerized the analyzer and Web App into a multi-stage Docker image deployed on Google Cloud Run (GCP).}
+      \resumeItemListEnd 
+      \vspace{\projectListItemVspace}
+    
+      \resumeProjectHeading
+      {\textbf{Sparrow VPS} $|$ \emph{Kubernetes, Docker, Gin (Go), FastAPI, Vue} $|$ \href{https://github.com/r3dacted42/sparrow-vps}{\faLink\ Repo}}{Apr 2025 -- May 2025}
       \resumeItemListStart
         \resumeItem{Designed a scalable cloud-native Virtual Private Server to ease the containerization and deployment process of projects.}
         \resumeItem{Implemented 6 core services for managing the application life-cycle, including repository analysis for stack detection, automated image builds, efficient deployment and monitoring.}
@@ -186,20 +194,19 @@
       \vspace{\projectListItemVspace}
     
       \resumeProjectHeading
-      {\textbf{Concurrent TUI Banking System} $|$ \emph{C, Ncurses, pthread} $|$ \href{https://github.com/r3dacted42/bank-mgmt-sys}{\textbf{Repo}}}{Sep 2024 -- Oct 2024}
+      {\textbf{Concurrent TUI Banking System} $|$ \emph{C, Ncurses, pthread} $|$ \href{https://github.com/r3dacted42/bank-mgmt-sys}{\faLink\ Repo}}{Sep 2024 -- Oct 2024}
       \resumeItemListStart
-        \resumeItem{Engineered a multi-threaded Bank Management System in C with RBAC and password hashing using bcrypt.}
-        \resumeItem{Handling up to 512 concurrent connections, implemented a client-server arch. with sockets and data serialization.}
-        \resumeItem{Utilized Ncurses for a TUI and managed persistent data storage with file locking to ensure data integrity.}
+        \resumeItem{Developed a high-concurrency system in C, using socket programming \& multi-threading to support up to 512 connections.}
+        \resumeItem{Ensured ease of use, data integrity and security by implementing an Ncurses TUI, single-session per user, record-level file locking for persistent storage, and RBAC with bcrypt password hashing.}
       \resumeItemListEnd 
       \vspace{\projectListItemVspace}
 
       \resumeProjectHeading
-      {\textbf{EmpERP (Full Stack)} $|$ \emph{React, Spring Boot, MySQL} $|$ \href{https://github.com/r3dacted42/EmpERP}{\textbf{Repo}}}{Aug 2024 -- Oct 2024}
+      {\textbf{EmpERP (Full Stack)} $|$ \emph{React, Spring Boot, MySQL} $|$ \href{https://github.com/r3dacted42/EmpERP}{\faLink\ Repo}}{Aug 2024 -- Oct 2024}
       \resumeItemListStart
         \resumeItem{Developed a full-stack app with Spring Boot, React, and MySQL, featuring RESTful APIs with JWT for security.}
         \resumeItem{Integrated core features like employee onboarding, department management, and salary administration.}
-        \resumeItem{Reduced API response times by 20\% by adhering to the MVC architecture and providing clear API documentation, ensuring a maintainable and scalable application.}
+        % \resumeItem{Reduced API response times by 20\% by adhering to the MVC architecture and providing clear API documentation, ensuring a maintainable and scalable application.}
       \resumeItemListEnd
       \vspace{\projectListItemVspace}
           
@@ -213,7 +220,7 @@
 %     \resumeSubHeadingListStart
     
       % \resumeProjectHeading
-      % {\textbf{Tic Tac Toe (Web App)} $|$ \emph{Phaser, Pusher, Express.js} $|$ \href{https://github.com/r3dacted42/tic-tac-toe}{\textbf{Repo}} $|$ \href{https://tic-tac-toe-chi-liart.vercel.app/}{\textbf{Deployment}}}{Oct 2023 -- Jan 2024}
+      % {\textbf{Tic Tac Toe (Web App)} $|$ \emph{Phaser, Pusher, Express.js} $|$ \href{https://github.com/r3dacted42/tic-tac-toe}{\faLink\ Repo} $|$ \href{https://tic-tac-toe-chi-liart.vercel.app/}{\textbf{Deployment}}}{Oct 2023 -- Jan 2024}
       % \resumeItemListStart
       %   \resumeItem{Deployed a real-time, multi-player game utilizing Phaser for frontend rendering and Pusher for communication.}
       %   \resumeItem{Increased engagement by 100\% using social features such as shared room codes for gameplay and in-game chat.}
@@ -221,16 +228,15 @@
       % \vspace{\projectListItemVspace}
   
       \resumeProjectHeading
-      {\textbf{IIITR Connect (Attendance App)} $|$ \emph{Flutter, Python, PostgreSQL} $|$ \href{https://github.com/r3dacted42/iiitr_connect}{\textbf{Frontend}} $|$ \href{https://github.com/r3dacted42/iiitr_connect_backend}{\textbf{Backend}}}{Aug 2023 -- Dec 2023}
+      {\textbf{IIITR Connect (Attendance App)} $|$ \emph{Flutter, OpenCV, FastAPI, PostgreSQL} $|$ \href{https://github.com/r3dacted42/iiitr_connect}{\faLink\ Repo FE} \ \href{https://github.com/r3dacted42/iiitr_connect_backend}{\faLink\ Repo BE}}{Aug 2023 -- Dec 2023}
       \resumeItemListStart
-        \resumeItem{Saved an estimated 15 minutes per class session by replacing manual roll call with a facial recognition system.}
-        \resumeItem{Designed and built a cross-platform mobile application using Flutter to manage student attendance.}
-        \resumeItem{Implemented a secure authentication system and authority-based RESTful API backend powered by FastAPI and Python.}
+        \resumeItem{Saved $\sim$15 minutes per class session by automating student attendance with a facial recognition system.}
+        \resumeItem{Designed and built a cross-platform Flutter mobile app with a secure authority-based RESTful API backend using FastAPI.}
       \resumeItemListEnd 
       % \vspace{\projectListItemVspace}
 
       % \resumeProjectHeading
-      % {\textbf{SkelRunner (Android Mobile Game)} $|$ \emph{Unity, C\#} $|$ \href{https://play.google.com/store/apps/details?id=com.r3dacted42.skelrunner}{\textbf{Google Play}}}{Sep 2022 -- Mar 2023}
+      % {\textbf{SkelRunner (Android Mobile Game)} $|$ \emph{Unity, C\#} $|$ \href{https://play.google.com/store/apps/details?id=com.r3dacted42.skelrunner}{\textbf{Google Play}}}{Sep 2022 - Mar 2023}
       % \resumeItemListStart
       %   \resumeItem{Developed an infinite runner game for Android using Unity and C\#.}
       %   \resumeItem{Implemented engaging gameplay mechanics, rich audio-visual effects, and an ad-monetization strategy.}
@@ -260,7 +266,7 @@
  \begin{itemize}[leftmargin=0.15in, label={}]
     \small{\item{
      \textbf{Technologies}{: Docker, Kubernetes, Three.JS, Flutter, Qt, Spring, React, FastAPI, PostgreSQL, Unreal, Unity } \\
-     \textbf{Languages}{: C/C++, Dart, Go, C\#, Java, Bash, JavaScript, PHP, HTML/CSS, Python } \\
+     \textbf{Languages}{: C/C++, Dart, Go, C\#, Java, Bash, Typescript/JavaScript, PHP, HTML/CSS, Python } \\
     }}
  \end{itemize}
  \vspace{\sectionEndVspace}
@@ -269,7 +275,7 @@
 %------RELEVANT COURSEWORK-------
 \section{Relevant Coursework}
         \begin{multicols}{4}
-            \begin{itemize}[itemsep=-5pt, parsep=3pt]
+            \begin{itemize}[leftmargin=0.2in, itemsep=-5pt, parsep=3pt]
                 \item\small Data Structures
                 \item Software Methodology
                 \item Algorithms Analysis
