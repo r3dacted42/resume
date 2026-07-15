@@ -41,6 +41,11 @@ jobs:
             cp main.pdf out/resume.pdf
           fi
           cp -r public/* out
+      
+      - name: Inject Last Updated Date
+        run: |
+          CURRENT_DATE=$(date +"%Y-%m-%d")
+          sed -i "s/{{ LAST_UPDATED }}/$CURRENT_DATE/g" out/index.html
 
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@v4.7.3

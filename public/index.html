@@ -16,10 +16,24 @@
             width: 100%;
             overflow-y: hidden;
         }
+
+        #update-badge {
+            position: absolute;
+            bottom: 16px;
+            right: 24px;
+            background: rgba(0, 0, 0, 0.6);
+            color: #fff;
+            padding: 8px 12px;
+            font-family: system-ui, sans-serif;
+            font-size: 0.8rem;
+            pointer-events: none;
+            z-index: 9999;
+        }
     </style>
 </head>
 
 <body>
+    <div id="update-badge">Last Updated: {{ LAST_UPDATED }}</div>
     <object data="https://r3dacted42.github.io/resume/resume.pdf" type="application/pdf">
         <iframe frameborder="0"
             src="./pdf.js/web/viewer.html?file=https://r3dacted42.github.io/resume/resume.pdf"></iframe>
